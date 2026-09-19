@@ -1,26 +1,27 @@
 # 立体几何交互教学 · 公垂线
 
-以佛山一模立体几何题为背景，用 Three.js 做 3D 可视化，交互式演示异面直线公垂线的两种解法。
+以佛山一模立体几何题为背景，用 Three.js 做 3D 可视化，交互式演示异面直线公垂线的解法。
 
 ## 在线访问
 
-推送到 `main` 分支后由 GitHub Actions 自动部署到 GitHub Pages，地址形如：
-
-```
-https://<用户名>.github.io/solid-geometry-common-perpendicular/
-```
-
-首次部署需约 1–2 分钟，可在仓库 **Actions** 标签页查看进度。
+https://a-chen1109.github.io/solid-geometry-common-perpendicular/
 
 ## 目录结构
 
 ```
 .
-├── index.html          # 单文件页面：HTML + CSS + JS 全部内联
-├── docs/               # 参考论文（多角度探究立体几何公垂线问题）
-└── .github/workflows/
-    └── deploy-pages.yml  # Pages 自动部署工作流
+├── index.html   # 单文件页面：HTML + CSS + JS 全部内联
+└── docs/        # 参考论文（多角度探究立体几何公垂线问题）
 ```
+
+## 部署方式
+
+GitHub Pages **分支部署**：`Settings → Pages → Source` 选择 `main` 分支 + 根目录 `/`。
+
+页面是纯静态单文件，无需构建步骤，推送到 `main` 后 GitHub 会自动重新发布（约 1 分钟生效）。
+
+> 若后续需要构建流程（压缩、预处理等），可改用 Actions 部署：在 `.github/workflows/` 加工作流即可。
+> 注意：推送工作流文件要求 Personal Access Token 带 `workflow` 权限，仅有 `repo` 权限会被拒绝。
 
 ## 外部依赖
 
@@ -36,13 +37,3 @@ https://<用户名>.github.io/solid-geometry-common-perpendicular/
 ```bash
 python -m http.server 8000
 ```
-
-## 启用 GitHub Pages
-
-首次推送后需手动确认一次：
-
-1. 仓库 **Settings → Pages**
-2. **Source** 选择 `GitHub Actions`
-3. 保存
-
-若是通过 API 创建并配置，此步已自动完成，无需再操作。
